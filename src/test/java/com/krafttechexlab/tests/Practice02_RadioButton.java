@@ -11,7 +11,8 @@ public class Practice02_RadioButton extends TestBase{
 
     RadioPage radioPage =new RadioPage();
     /**
-     * In this test, checkboxes were tested and the disabled checkbox could be clicked with the help of JS.
+     * In this test, radio buttons were tested and
+     * the disabled radio button could be clicked with the help of JavascriptExecutor.
      * */
     @Test
     public void test1_radioButtons(){
