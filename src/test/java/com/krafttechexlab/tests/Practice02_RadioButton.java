@@ -1,6 +1,5 @@
 package com.krafttechexlab.tests;
 
-import com.krafttechexlab.pages.HomePage;
 import com.krafttechexlab.pages.RadioPage;
 import com.krafttechexlab.utilities.Driver;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,14 +8,14 @@ import org.testng.annotations.Test;
 
 public class Practice02_RadioButton extends TestBase{
 
-    HomePage homePage = new HomePage();
+
     RadioPage radioPage =new RadioPage();
     /**
      * In this test, checkboxes were tested and the disabled checkbox could be clicked with the help of JS.
      * */
     @Test
     public void test1_radioButtons(){
-        homePage.navigateToModule("Forms","Radio");
+        radioPage.navigateToModule("Forms","Radio");
 
         Assert.assertTrue(radioPage.radioButton1.isSelected());
         Assert.assertFalse(radioPage.formCheck.isDisplayed());
