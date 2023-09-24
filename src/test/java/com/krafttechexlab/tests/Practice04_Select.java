@@ -26,9 +26,9 @@ public class Practice04_Select extends TestBase{
         }
     }
     @Test
-    public void test_selectByVisibleText(){
+    public void test2_selectByVisibleText(){
         selectPage.navigateToModule("Forms","Select");
-        
+
         Select select = new Select(selectPage.dropDownMenu);
 
         //select two web element by visible text
@@ -38,6 +38,18 @@ public class Practice04_Select extends TestBase{
 
         String expected = "Two";
         String actual =firstSelectedOption.getText();
+
+        Assert.assertEquals(actual,expected);
+    }
+    @Test
+    public void test3_selectByIndexNumber(){
+        selectPage.navigateToModule("Forms","Select");
+
+        Select select = new Select(selectPage.dropDownMenu);
+
+        select.selectByIndex(1);
+        String actual = select.getFirstSelectedOption().getText();
+        String expected = "One";
 
         Assert.assertEquals(actual,expected);
     }
