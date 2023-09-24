@@ -53,4 +53,17 @@ public class Practice04_Select extends TestBase{
 
         Assert.assertEquals(actual,expected);
     }
+    @Test
+    public void test_selectByValueAttribute(){
+        selectPage.navigateToModule("Forms","Select");
+
+        Select select = new Select(selectPage.dropDownMenu);
+
+        select.selectByValue("3");
+        String actual = select.getFirstSelectedOption().getText();
+        String expected = "Three";
+
+        Assert.assertEquals(actual,expected);
+
+    }
 }
