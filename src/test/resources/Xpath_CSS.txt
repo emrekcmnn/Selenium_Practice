@@ -1,0 +1,145 @@
+Xpath
+
+1.Absolute Xpath
+
+->  "/"  --> tek slash ile daima en üstten başlar
+-> bir parent altında 1den fazla sibling classlar varsa aradığımız 
+classın index numarasını kullanarak erişiriz.
+-> HTML numaraları her zaman 1'den başlar
+-> HTML'de bulmak için elementin üzerine sağ click->copy->copy FULL XPATH
+==> Örnek :  /html/body/div/form/div[2]/input		
+			 /html/body/main/div/nav/ol/li[1]/a 
+			 /html/div/li/b[2]
+			 /html/div[3]/li/b
+
+
+2.Relative Xpath
+
+1. FORMÜL 
+==>			 //tagName[@artribute='value']
+
+->NOT: Eğer xpath locator'ı aynı anda birden fazla elementi locate
+ediyorsa ve bunlar aynı parent altındaysa
+==>			//tagName[@artribute='value'][numder]
+
+->NOT: Eğer xpath locator'ı aynı anda birden fazla elementi locate 
+ediyorsa ve bunlar farklı parent altındaysa
+==>			(//tagName[@artribute='value'])[numder]
+
+-> NOT: * --> hepsinin içerisinden/hepsini tek tek kontrol eder
+==> Örnek :	//input[@id='email']
+			//*[@id='email']
+			//input[@*='email']
+
+
+2.FORMÜL
+==>			//tagName[test()='text']
+			//tagName[.='text']	
+
+3.FORMÜL
+==>			//tagName[starts-with(@attribute,'value')]
+			//tagName[starts-with(text(),'value')]
+
+
+5.FORMÜL
+==>			//tagName[contains(@attribute,'value')]
+			//tagName[contains(text(),'value')]
+
+
+6.FORMÜL
+AND logic
+==>			//tagName[@attribute1='value1'][@attribute2='value2']
+			//tagName[@attribute1='value1' and @attribute2='value2']
+
+OR logic
+			//tagName[@attribute1='value1' or @attribute2='value2']
+
+
+Note1: '/..' --> from child to parent
+Note2: '/' --> from parent to child
+Note3: * --> means all
+Note4: '//' parent --> to all child, grandchild...
+
+
+
+
+
+CSS SELECTORS LOCATOR 
+
+1.	With ID
+
+-> way 1 ==> #Value-Of-Id
+-> way 2 ==> tagName#value-Of-Id	->Xpath karşılığı ==> //tagName[@id='value']
+
+
+2.With Class
+
+-> way 1 ==> .value.Of.Class (. ile başlayıp, varsa boşluklara da . koyuyoruz)
+-> way 2 ==> tagName.value.Of.Class  ->Xpath karşılığı ==> //tagName[@class='value']
+
+
+3.	With Known ATTRIBUTE & VALUE
+
+-> way 1 ==> [attribute='value']	 
+-> way 2 ==> tagName[attribute='value']		 ->Xpath karşılığı ==> //tagName[@artribute='value']
+
+
+4. With stars-with (xpath'deki starts-with() metodu yerine ^ kullanılır)
+==>  tagName[attribute^='value'] 		->Xpath karşılığı ==> //tagName[starts-with(@attribute,'value')]
+
+
+5. With ends-with (xpath'deki ends-with() metodu yerine $ kullanılır)
+--> we cannot use "ends-with" with chrome
+
+==>  tagName[attribute$='value']		 ->Xpath karşılığı ==> //tagName[ends-with(@attribute,'value')]
+
+
+6. With contains (xpath'deki contains() metodu yerine * kullanılır)
+-->dinamik elementleri locate ederken kullanılabilir.
+==> tagName[attribute*='value']				 ->Xpath karşılığı ==> //tagName[contains(@attribute,'value')]
+
+
+7. With Multiple Attributes
+==> tagName[attribute1='value1'][attribute2='value2']  
+											->Xpath ==> //tagName[@attribute1='value1'][@attribute2='value2']
+											->xpath'de and ve or da kullanılabiliyor
+
+
+8.How to locate CHILD ELEMENT in CSS
+--> tagName>tagName>tagName>tagName>		->xpath'de / ve index kullanılır		 ==>  //tag/tag/tag
+--> CSS'de index numarası kullanamayız (we cannot use index with CSS)
+
+==> Example: section>form>div>input 														
+
+
+9.How to locate DESCENDANT ELEMENT in CSS
+--> we use SPACE for navigating to child element
+--> we cannot go child to parent with CSS 
+
+==>Example :  section form div imput       	->xpath'de / ve index kullanılır
+==>			  section div imput 	--> We can jump grandchild - we took out "form" 
+
+
+
+
+***LOCATING FOLLOWING SIBLING
+
+xpath ---> //tagName[@attribute='value']/following-sibling::tagName
+CSS   ---> [attribute='value']~tagName  or --> [attribute1='value1']~[attribute2='value20']
+
+
+
+
+
+
+
+XPATH - CSS FARKLARI
+
+1.	CSS text kullanarak locate edemez. Xpath ile locate edilebilir.
+2.	CSS farklı farent altında ise index ile locate edilemez. Xpath ile edilebilir.
+3.	CSS childdan parenta giderek locate edemez. Xpath yapabilir.
+4.	CSS i yazmak ve okumak daha kolaydır. Xpath daha karışıktır.
+5.	Xpath CSS e göre daha fazla locate etme imkanı sağlar.
+
+
+
