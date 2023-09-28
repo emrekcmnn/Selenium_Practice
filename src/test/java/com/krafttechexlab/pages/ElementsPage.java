@@ -95,4 +95,7 @@ public class ElementsPage extends BasePage{
     @FindBy(name = "submit")
     public WebElement submitButton;
 
+    @FindBy(className = "ozelpr")
+    public WebElement form;
+
 }
