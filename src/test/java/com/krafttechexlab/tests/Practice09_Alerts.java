@@ -6,10 +6,10 @@ import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 
 public class Practice09_Alerts extends TestBase{
-
+    AlertsPage alertsPage = new AlertsPage();
     @Test
     public void test1_Alerts(){
-        AlertsPage alertsPage = new AlertsPage();
+
         alertsPage.navigateToModule("JavaScript","Alerts");
 
         alertsPage.clickButton1.click();
@@ -17,6 +17,14 @@ public class Practice09_Alerts extends TestBase{
         //create a alert object
         Alert alert = Driver.get().switchTo().alert();
         //accept alert by accept()
+        alert.accept();
+    }
+    @Test
+    public void test2_Alerts() throws InterruptedException {
+        alertsPage.navigateToModule("JavaScript","Alerts");
+        alertsPage.clickButton2.click();
+        Thread.sleep(4000);
+        Alert alert = Driver.get().switchTo().alert();
         alert.accept();
     }
 }
