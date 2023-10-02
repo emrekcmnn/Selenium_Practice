@@ -17,4 +17,10 @@ public class AlertsPage extends BasePage{
     @FindBy(id="myBtnClickP")
     public WebElement clickButton4;
 
+    @FindBy(id = "demoClickC")
+    public WebElement textOfThirdClickButton;
+
+    @FindBy(id ="demoClickP")
+    public WebElement textOfFourthClickButton;
+
 }

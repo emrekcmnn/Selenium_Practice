@@ -3,6 +3,7 @@ package com.krafttechexlab.tests;
 import com.krafttechexlab.pages.AlertsPage;
 import com.krafttechexlab.utilities.Driver;
 import org.openqa.selenium.Alert;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Practice09_Alerts extends TestBase{
@@ -26,5 +27,15 @@ public class Practice09_Alerts extends TestBase{
         Thread.sleep(4000);
         Alert alert = Driver.get().switchTo().alert();
         alert.accept();
+    }
+    @Test
+    public void  test3_Alerts(){
+        alertsPage.navigateToModule("JavaScript","Alerts");
+        alertsPage.clickButton3.click();
+        Alert alert = Driver.get().switchTo().alert();
+        alert.dismiss();
+        String expectedText="You selected Cancel";
+        String actualText = alertsPage.textOfThirdClickButton.getText();
+        Assert.assertEquals(actualText,expectedText);
     }
 }
