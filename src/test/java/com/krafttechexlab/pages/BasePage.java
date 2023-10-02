@@ -2,6 +2,7 @@ package com.krafttechexlab.pages;
 
 import com.krafttechexlab.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -30,11 +31,16 @@ public class BasePage {
 
 
     public void navigateToModule(String tab, String module) {
-
         String tabLoc = "//span[text()='" + tab + "']";
         String moduleLoc = "//span[text()='" + module + "']";
         Driver.get().findElement(By.xpath(tabLoc)).click();
+    try {
         Driver.get().findElement(By.xpath(moduleLoc)).click();
+    }catch (ElementNotInteractableException e){
+        moduleLoc= "("+moduleLoc+")[2]";
+        Driver.get().findElement(By.xpath(moduleLoc)).click();
+    }
+
 
 
     }
