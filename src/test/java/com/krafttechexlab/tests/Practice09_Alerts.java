@@ -38,4 +38,17 @@ public class Practice09_Alerts extends TestBase{
         String actualText = alertsPage.textOfThirdClickButton.getText();
         Assert.assertEquals(actualText,expectedText);
     }
+    @Test
+    public void test4_Alerts(){
+        alertsPage.navigateToModule("JavaScript","Alerts");
+        alertsPage.clickButton4.click();
+        Alert alert = Driver.get().switchTo().alert();
+        String input = "Emre";
+        alert.sendKeys(input);
+        alert.accept();
+        String expectedText= "Hello "+input+"! How are you today?";
+        String actualText= alertsPage.textOfFourthClickButton.getText();
+        Assert.assertEquals(actualText,expectedText);
+
+    }
 }
