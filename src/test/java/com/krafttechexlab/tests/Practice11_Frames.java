@@ -35,7 +35,7 @@ public class Practice11_Frames {
 
         Assert.assertEquals(actualText,expectedText);
 
-        driver.quit();
+        Driver.closeDriver();
 
     }
 }
