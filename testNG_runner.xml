@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!-- How to run specific package -->
+<suite name="Selenium TestNG Practice" verbose="1">
+    <test name="krafttechexlab">
+        <packages>
+            <package name="com.krafttechexlab.tests">
+
+            </package>
+        </packages>
+    </test>
+</suite>
