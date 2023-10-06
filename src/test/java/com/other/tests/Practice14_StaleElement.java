@@ -8,10 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class Practice14_StaleElement {
-   WebDriver driver= Driver.get();
+   WebDriver driver;
 
     @Test
     public void staleFix(){
+        driver= Driver.get();
         driver.get("https://freecrm.com/");
         driver.manage().window().maximize();
 
@@ -39,7 +40,5 @@ public class Practice14_StaleElement {
         }
 
         Driver.closeDriver();
-
-
     }
 }

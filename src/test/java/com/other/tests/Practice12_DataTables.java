@@ -11,10 +11,11 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class Practice12_DataTables {
-    WebDriver driver= Driver.get();
+    WebDriver driver;
 
     @BeforeMethod
     public void setUp(){
+        driver= Driver.get();
         driver.get("https://the-internet.herokuapp.com/tables");
         driver.manage().window().maximize();
     }
@@ -25,12 +26,14 @@ public class Practice12_DataTables {
     }
     @Test
     public void test1_printTable(){
+        driver= Driver.get();
         WebElement table1=driver.findElement(By.id("table1"));
         System.out.println("table1.getText() = \n" + table1.getText());
     }
 
     @Test
     public void test2_getAllHeaders(){
+        driver= Driver.get();
         List<WebElement> headers = driver.findElements(By.xpath("//table[@id='table1']//th"));
         System.out.println("headers.size() = " + headers.size());
 
@@ -40,6 +43,7 @@ public class Practice12_DataTables {
     }
     @Test
     public void test3_printTableSize(){
+        driver= Driver.get();
         List<WebElement> allRowWithHeader = driver.findElements(By.xpath("//table[@id='table1']//tr"));
         System.out.println("allRowWithHeader.size() = " + allRowWithHeader.size());
 
@@ -48,28 +52,33 @@ public class Practice12_DataTables {
     }
 
     private int getNumberOfColumns() {
+        driver= Driver.get();
         List<WebElement> headers = driver.findElements(By.xpath("//table[@id='table1']//th"));
         return headers.size();
     }
 
     private int getNumberOfRows() {
+        driver= Driver.get();
         List<WebElement> allRowsWithoutHeader = driver.findElements(By.xpath("//table[@id='table1']//tbody/tr"));
         return allRowsWithoutHeader.size();
     }
 
     @Test
     public void test4_printAllCellsByIndex(){
+        driver= Driver.get();
         //We want to write a code that it will print all cells one by one
         int rowNumber = getNumberOfRows();
         int columnNumber = getNumberOfColumns();
 
         for (int i = 1; i <= rowNumber; i++) {
+            driver= Driver.get();
             for (int j = 1; j <= columnNumber; j++) {
                 System.out.println(i + "/" + j + "-" + driver.findElement(By.xpath("//table[@id='table1']/tbody/tr[" + i + "]/td[" + j + "]")).getText());
             }
         }
     }
     private String getSpecificCellBasedOnNumbersThatIsGiven(int row, int column){
+        driver= Driver.get();
         WebElement element = driver.findElement(By.xpath("//table[@id='table1']/tbody/tr[" + row + "]/td[" + column + "]"));
     return element.getText();
     }

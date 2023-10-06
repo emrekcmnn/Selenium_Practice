@@ -7,9 +7,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Practice11_Frames {
-    WebDriver driver = Driver.get();
+    WebDriver driver;
     @Test
     public void test1_nestedFrames(){
+        driver= Driver.get();
         driver.get("https://the-internet.herokuapp.com/nested_frames");
         driver.manage().window().maximize();
 
