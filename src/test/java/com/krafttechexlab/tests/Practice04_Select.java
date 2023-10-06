@@ -10,10 +10,11 @@ import java.util.List;
 
 public class Practice04_Select extends TestBase{
 
-    SelectPage selectPage=new SelectPage();
+    SelectPage selectPage;
 
     @Test
     public void test1_select(){
+        selectPage=new SelectPage();
         selectPage.navigateToModule("Forms","Select");
 
         Select select = new Select(selectPage.dropDownMenu);
@@ -27,6 +28,7 @@ public class Practice04_Select extends TestBase{
     }
     @Test
     public void test2_selectByVisibleText(){
+        selectPage=new SelectPage();
         selectPage.navigateToModule("Forms","Select");
 
         Select select = new Select(selectPage.dropDownMenu);
@@ -43,6 +45,7 @@ public class Practice04_Select extends TestBase{
     }
     @Test
     public void test3_selectByIndexNumber(){
+        selectPage=new SelectPage();
         selectPage.navigateToModule("Forms","Select");
 
         Select select = new Select(selectPage.dropDownMenu);
@@ -55,6 +58,7 @@ public class Practice04_Select extends TestBase{
     }
     @Test
     public void test_selectByValueAttribute(){
+        selectPage=new SelectPage();
         selectPage.navigateToModule("Forms","Select");
 
         Select select = new Select(selectPage.dropDownMenu);

@@ -7,10 +7,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Practice09_Alerts extends TestBase{
-    AlertsPage alertsPage = new AlertsPage();
+    AlertsPage alertsPage;
     @Test
     public void test1_Alerts(){
-
+        alertsPage = new AlertsPage();
         alertsPage.navigateToModule("JavaScript","Alerts");
 
         alertsPage.clickButton1.click();
@@ -22,6 +22,7 @@ public class Practice09_Alerts extends TestBase{
     }
     @Test
     public void test2_Alerts() throws InterruptedException {
+        alertsPage = new AlertsPage();
         alertsPage.navigateToModule("JavaScript","Alerts");
         alertsPage.clickButton2.click();
         Thread.sleep(4000);
@@ -30,6 +31,7 @@ public class Practice09_Alerts extends TestBase{
     }
     @Test
     public void  test3_Alerts(){
+        alertsPage = new AlertsPage();
         alertsPage.navigateToModule("JavaScript","Alerts");
         alertsPage.clickButton3.click();
         Alert alert = Driver.get().switchTo().alert();
@@ -40,6 +42,7 @@ public class Practice09_Alerts extends TestBase{
     }
     @Test
     public void test4_Alerts(){
+        alertsPage = new AlertsPage();
         alertsPage.navigateToModule("JavaScript","Alerts");
         alertsPage.clickButton4.click();
         Alert alert = Driver.get().switchTo().alert();

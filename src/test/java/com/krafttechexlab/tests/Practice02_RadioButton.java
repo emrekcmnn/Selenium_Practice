@@ -9,13 +9,14 @@ import org.testng.annotations.Test;
 public class Practice02_RadioButton extends TestBase{
 
 
-    RadioPage radioPage =new RadioPage();
+    RadioPage radioPage;
     /**
      * In this test, radio buttons were tested and
      * the disabled radio button could be clicked with the help of JavascriptExecutor.
      * */
     @Test
     public void test1_radioButtons(){
+        radioPage =new RadioPage();
         radioPage.navigateToModule("Forms","Radio");
 
         Assert.assertTrue(radioPage.radioButton1.isSelected());

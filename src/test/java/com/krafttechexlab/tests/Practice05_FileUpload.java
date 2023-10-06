@@ -5,9 +5,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Practice05_FileUpload extends TestBase{
-    FileUploadPage fileUploadPage = new FileUploadPage();
+
     @Test
     public void test1_fileUploadTest(){
+        FileUploadPage fileUploadPage = new FileUploadPage();
         fileUploadPage.navigateToModule("Forms","File Upload");
         String projectPath= System.getProperty("user.dir");
 

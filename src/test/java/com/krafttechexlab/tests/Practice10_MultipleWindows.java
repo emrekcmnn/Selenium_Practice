@@ -3,7 +3,6 @@ package com.krafttechexlab.tests;
 import com.krafttechexlab.pages.OpenNewTabPage;
 import com.krafttechexlab.utilities.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WindowType;
 import org.testng.annotations.Test;
 
 import java.util.Set;

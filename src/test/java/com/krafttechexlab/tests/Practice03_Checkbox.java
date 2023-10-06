@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class Practice03_Checkbox extends TestBase{
 
-    CheckboxPage checkboxPage = new CheckboxPage();
+    CheckboxPage checkboxPage;
 
     /**
      * In this test, checkboxes were tested and
@@ -16,6 +16,7 @@ public class Practice03_Checkbox extends TestBase{
      * */
     @Test
     public void test1_Checkboxes() throws InterruptedException {
+        checkboxPage = new CheckboxPage();
         checkboxPage.navigateToModule("Forms","Checkbox");
 
         Assert.assertFalse(checkboxPage.checkbox1.isSelected());

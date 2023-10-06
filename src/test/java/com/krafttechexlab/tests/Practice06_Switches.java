@@ -8,10 +8,11 @@ import org.testng.annotations.Test;
 
 public class Practice06_Switches extends TestBase {
 
-    SwitchesPage switchesPage= new SwitchesPage();
+
 
     @Test
     public void test1_Switches() throws InterruptedException {
+        SwitchesPage switchesPage= new SwitchesPage();
         switchesPage.navigateToModule("Forms","Switches");
 
         Thread.sleep(500);

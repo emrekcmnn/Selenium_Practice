@@ -1,4 +1,4 @@
-package com.krafttechexlab.tests;
+package com.other.tests;
 
 import com.krafttechexlab.utilities.Driver;
 import org.openqa.selenium.By;
