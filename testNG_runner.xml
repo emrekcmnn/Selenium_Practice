@@ -45,7 +45,7 @@
 
 
         <!--How to run specific class -->
-
+<!--
 <suite name="Selenium Practice" verbose="1">
     <test name="krafttechexlab">
         <classes>
@@ -54,3 +54,48 @@
     </test>
     
 </suite>
+-->
+
+
+        <!--How to run more than one class -->
+<!--
+<suite name="Selenium Practice" verbose="1">
+    <test name="krafttechexlab">
+        <classes>
+            <class name="com.krafttechexlab.tests.Practice08_FillOutTheFullForm"/>
+            <class name="com.krafttechexlab.tests.Practice10_MultipleWindows"/>
+        </classes>
+    </test>
+</suite>
+-->
+
+
+        <!--How to run specific test in the class -->
+<!--
+<suite name="Selenium Practice" verbose="1">
+    <test name="krafttechexlab">
+        <classes>
+            <class name="com.krafttechexlab.tests.Practice04_Select">
+                <methods>
+                    <include name="test2_selectByVisibleText"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+-->
+
+        <!--How to run all test cases in class without one -->
+<suite name="Selenium Practice" verbose="1">
+    <test name="krafttechexlab">
+        <classes>
+            <class name="com.krafttechexlab.tests.Practice04_Select">
+                <methods>
+                    <exclude name="test2_selectByVisibleText"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
