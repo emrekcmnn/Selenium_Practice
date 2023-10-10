@@ -23,7 +23,8 @@ public class BasePage {
     public WebElement developersMenu;
     @FindBy(xpath = "//span[.='Dashboard']")
     public WebElement dashboardMenu;
-
+    @FindBy(xpath = "//span[text()='Login']")
+    public WebElement loginButtonOnBasePage;
 
     public void navigateToModule(String tab){
         Driver.get().findElement(By.xpath("//span[.='" + tab + "']")).click();
@@ -34,15 +35,12 @@ public class BasePage {
         String tabLoc = "//span[text()='" + tab + "']";
         String moduleLoc = "//span[text()='" + module + "']";
         Driver.get().findElement(By.xpath(tabLoc)).click();
-    try {
-        Driver.get().findElement(By.xpath(moduleLoc)).click();
-    }catch (ElementNotInteractableException e){
-        moduleLoc= "("+moduleLoc+")[2]";
-        Driver.get().findElement(By.xpath(moduleLoc)).click();
-    }
-
-
-
+          try {
+                Driver.get().findElement(By.xpath(moduleLoc)).click();
+          }catch (ElementNotInteractableException e){
+                moduleLoc= "("+moduleLoc+")[2]";
+                Driver.get().findElement(By.xpath(moduleLoc)).click();
+          }
     }
 
     public String getAccountName(String accountName){
