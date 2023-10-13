@@ -49,8 +49,8 @@ public class TestBase {
             TakesScreenshot ts = (TakesScreenshot) driver;
             File source = ts.getScreenshotAs(OutputType.FILE);
 
-            String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-            String target = System.getProperty("user.dir")+"test-output/Screenshots/"+result.getName()+date+".png";
+            String date = new SimpleDateFormat("yyyyMMdd_hhmmss").format(new Date());
+            String target = System.getProperty("user.dir")+"/test-output/Screenshots/"+result.getName()+date+".png";
             File finalDestination = new File(target);
             //FileUtils.copyFile(source,finalDestination);
             FileHandler.copy(source,finalDestination);
@@ -77,7 +77,7 @@ public class TestBase {
         report.setSystemInfo("Tester","Emre");
     }
 
-    @BeforeTest
+    @AfterMethod
     public void tearDownTest(){
         report.flush();
     }
